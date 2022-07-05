@@ -95,7 +95,7 @@
                                 </td>
 
                                 <td>
-                                    <button class="btn btn-danger"><a style="text-decoration: none" class="text-white" href="<%=request.getContextPath()%>/user/news/delete?id=<%=item.getId()%>">Delete</a></button>
+                                    <button onclick="deleteNews()" class="btn btn-danger"><a style="text-decoration: none" class="text-white" href="<%=request.getContextPath()%>/user/news/delete?id=<%=item.getId()%>">Delete</a></button>
                                 </td>
                             </tr>
                             <%
@@ -128,6 +128,11 @@
         </footer>
     </div>
 </div>
+<script>
+    function deleteNews() {
+        confirm("Bạn có muốn xóa bài viết này!");
+    }
+</script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         crossorigin="anonymous"></script>
 <script src="<%=request.getContextPath()%>/css/js/scripts.js"></script>

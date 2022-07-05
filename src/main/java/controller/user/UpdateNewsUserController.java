@@ -26,8 +26,8 @@ public class UpdateNewsUserController
         resp.setCharacterEncoding("utf-8");
         HttpSession session = req.getSession();
         Object userLogin = session.getAttribute("userLogin");
-        if (userLogin==null){
-            resp.sendRedirect(req.getContextPath()+"/login");
+        if (userLogin == null) {
+            resp.sendRedirect(req.getContextPath() + "/login");
         }
 
         int id = Integer.parseInt(req.getParameter("id"));
@@ -43,19 +43,23 @@ public class UpdateNewsUserController
         throws ServletException, IOException {
         req.setCharacterEncoding("utf-8");
         resp.setCharacterEncoding("utf-8");
+
+        int id = Integer.parseInt(req.getParameter("id"));
         String title = req.getParameter("title");
         String description = req.getParameter("description");
         String content = req.getParameter("content");
         int categoryId = Integer.parseInt(req.getParameter("categoryId"));
+
         new UpdateNewsUserDAO().update(UpdateNewsUserModel.builder()
+                                                          .id(id)
                                                           .title(title)
                                                           .description(description)
                                                           .content(content)
                                                           .categoryId(CategoriesModel.builder()
-                                                                                       .id(categoryId)
-                                                                                       .build())
+                                                                                     .id(categoryId)
+                                                                                     .build())
                                                           .build());
-        req.setAttribute("list",new ListNewsUserDAO().findAll(Integer.parseInt(req.getParameter("id"))));
-        resp.sendRedirect(req.getContextPath()+"/user/news/list");
+
+        resp.sendRedirect(req.getContextPath() + "/user/news/list");
     }
 }

@@ -29,7 +29,7 @@ public class AddCategoryController
 
         req.getRequestDispatcher("/view/admin/category/add-categories.jsp").forward(req, resp);
     }
-
+//them
     @Override
     protected void doPost(final HttpServletRequest req, final HttpServletResponse resp)
         throws ServletException, IOException {

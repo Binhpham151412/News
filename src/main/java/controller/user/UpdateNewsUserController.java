@@ -55,7 +55,7 @@ public class UpdateNewsUserController
                                                           .title(title)
                                                           .description(description)
                                                           .content(content)
-                                                          .categoryId(CategoriesModel.builder()
+                                                          .categoriesModel(CategoriesModel.builder()
                                                                                      .id(categoryId)
                                                                                      .build())
                                                           .build());

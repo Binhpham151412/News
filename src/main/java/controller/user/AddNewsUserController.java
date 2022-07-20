@@ -38,13 +38,13 @@ public class AddNewsUserController
         String title = req.getParameter("title");
         String description = req.getParameter("description");
         String content = req.getParameter("content");
-        int categoryId = Integer.parseInt(req.getParameter("categoryName"));
+        int categoryId = Integer.parseInt(req.getParameter("categoryId"));
         new AddNewsUserDAO().addNews(AddNewsUserModel.builder()
                                                      .content(content)
                                                      .description(description)
                                                      .title(title)
-                                                     .userName(UsersModel.builder().id(userid).build())
-                                                     .categoryName(CategoriesModel.builder().id(categoryId).build())
+                                                     .usersModel(UsersModel.builder().id(userid).build())
+                                                     .categoriesModel(CategoriesModel.builder().id(categoryId).build())
                                                      .build());
 
         resp.sendRedirect(req.getContextPath() + "/user/news/list");

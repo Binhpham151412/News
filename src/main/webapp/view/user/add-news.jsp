@@ -20,7 +20,7 @@
     <lable>Content</lable>
     <input type="text" name="content">
     <lable>Category</lable>
-    <select name="categoryName" id="">
+    <select name="categoryId">
         <%
             List<CategoriesModel> list = (List<CategoriesModel>) request.getAttribute("list");
             if (list != null) {
@@ -32,7 +32,7 @@
             }
         %>
     </select>
-    <input type="submit">
+    <input type="submit" value="submit">
 </form>
 </body>
 </html>

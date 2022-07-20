@@ -8,7 +8,7 @@ public class AddNewsUserDAO
     public void addNews(AddNewsUserModel addNewsUserModel) {
         String sql = "insert into news (content, description, title, categories_id, users_id) values (?, ?, ?, ?, ? )";
         insert(sql, addNewsUserModel.getContent(), addNewsUserModel.getDescription(),
-                      addNewsUserModel.getTitle(), addNewsUserModel.getCategoryName().getId(),
-                      addNewsUserModel.getUserName().getId());
+                      addNewsUserModel.getTitle(), addNewsUserModel.getCategoriesModel().getId(),
+                      addNewsUserModel.getUsersModel().getId());
     }
 }

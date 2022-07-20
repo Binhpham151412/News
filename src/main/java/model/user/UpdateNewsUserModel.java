@@ -18,5 +18,5 @@ public class UpdateNewsUserModel {
     private String content;
     private String description;
     private String title;
-    private CategoriesModel categoryId;
+    private CategoriesModel categoriesModel;
 }

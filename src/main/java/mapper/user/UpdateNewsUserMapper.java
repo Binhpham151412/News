@@ -18,7 +18,7 @@ public class UpdateNewsUserMapper
                                       .content(resultSet.getString("content"))
                                       .description(resultSet.getString("description"))
                                       .title(resultSet.getString("title"))
-                                      .categoryId(CategoriesModel.builder()
+                                      .categoriesModel(CategoriesModel.builder()
                                                                  .id(Integer.parseInt(resultSet.getString("categories_id")))
                                                                  .build())
                                       .build();

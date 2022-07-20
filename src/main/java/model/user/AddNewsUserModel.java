@@ -17,6 +17,6 @@ public class AddNewsUserModel{
     private String content;
     private String description;
     private String title;
-    private CategoriesModel categoryName;
-    private UsersModel userName;
+    private CategoriesModel categoriesModel;
+    private UsersModel usersModel;
 }

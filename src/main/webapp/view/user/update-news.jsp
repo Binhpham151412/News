@@ -23,11 +23,11 @@
     <lable>Content</lable>
     <input type="text" name="content" value="<%=updateNewsUserModel.getContent()%>">
     <lable>Category</lable>
-    <select name="categoryId" id="<%=updateNewsUserModel.getCategoryId().getId()%>">
+    <select name="categoryId" id="<%=updateNewsUserModel.getCategoriesModel().getId()%>">
         <%
             List<CategoriesModel> list = (List<CategoriesModel>) request.getAttribute("list");
             for (CategoriesModel item : list) {
-                if (item.getId() == updateNewsUserModel.getCategoryId().getId()) {
+                if (item.getId() == updateNewsUserModel.getCategoriesModel().getId()) {
         %>
         <option value="<%=item.getId()%>" selected><%=item.getName()%></option>
         <%
